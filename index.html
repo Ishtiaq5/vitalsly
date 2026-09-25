@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#06080f" />
+<title>Vitalsly — Premium Fitness &amp; Workout Tracker</title>
+<meta name="description" content="Vitalsly is a premium dark fitness dashboard to log workouts, build streaks and visualize your weekly progress." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='88'%3E%E2%9A%A1%3C/text%3E%3C/svg%3E" />
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+<a class="skip-link" href="#dashboard">Skip to dashboard</a>
+
+<div class="orbs" aria-hidden="true">
+  <span class="orb orb-a"></span>
+  <span class="orb orb-b"></span>
+  <span class="orb orb-c"></span>
+  <span class="grid-glow"></span>
+</div>
+
+<header class="site-header glass">
+  <a class="brand" href="#top" aria-label="Vitalsly home">
+    <span class="brand-mark" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 13h4l2.6-7.2L14 18l2-5h5" />
+      </svg>
+    </span>
+    <span class="brand-name">Vitalsly</span>
+  </a>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="#dashboard">Dashboard</a>
+    <a href="#log">Log workout</a>
+    <a href="#goals">Goals</a>
+  </nav>
+  <a class="btn btn-primary btn-sm" href="#log">Start tracking</a>
+</header>
+
+<main id="top">
+
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-copy">
+      <p class="eyebrow">✦ Premium fitness tracker</p>
+      <h1 id="hero-title">Track every rep.<br /><span class="grad">Own every day.</span></h1>
+      <p class="lede">
+        A dark, focused dashboard for your training week. Log a session in seconds,
+        watch streaks grow, and turn raw output into real momentum.
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#log">Log a workout</a>
+        <a class="btn btn-ghost" href="#dashboard">View dashboard</a>
+      </div>
+      <dl class="hero-stats">
+        <div><dt>Active today</dt><dd data-stat="todayMinutes">0<span>min</span></dd></div>
+        <div><dt>This week</dt><dd data-stat="weekMinutes">0<span>min</span></dd></div>
+        <div><dt>Streak</dt><dd data-stat="streak">0<span>day</span></dd></div>
+      </dl>
+    </div>
+
+    <div class="hero-visual glass" aria-label="Daily movement goal">
+      <div class="ring-wrap">
+        <svg class="ring" viewBox="0 0 160 160" role="img" aria-labelledby="ringTitle">
+          <title id="ringTitle">Daily movement goal progress</title>
+          <defs>
+            <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#7c5cff" />
+              <stop offset="50%" stop-color="#22d3ee" />
+              <stop offset="100%" stop-color="#f9578f" />
+            </linearGradient>
+          </defs>
+          <circle class="ring-track" cx="80" cy="80" r="64" />
+          <circle class="ring-value" cx="80" cy="80" r="64" data-ring />
+        </svg>
+        <div class="ring-center">
+          <strong data-ring-pct>0%</strong>
+          <span>of goal</span>
+        </div>
+      </div>
+      <p class="ring-caption">Daily goal <b>60&nbsp;min</b> of movement</p>
+    </div>
+  </section>
+
+  <section id="dashboard" class="section" aria-labelledby="dash-title">
+    <div class="section-head">
+      <h2 id="dash-title">Your <span class="grad">dashboard</span></h2>
+      <p>Every number refreshes the instant you log a session.</p>
+    </div>
+
+    <div class="stat-grid">
+      <article class="stat-card glass">
+        <span class="stat-ico" aria-hidden="true">🔥</span>
+        <h3>Today</h3>
+        <p class="stat-num" data-stat="todayMinutes">0<span>min</span></p>
+        <p class="stat-sub">Goal 60 min</p>
+      </article>
+      <article class="stat-card glass">
+        <span class="stat-ico" aria-hidden="true">📈</span>
+        <h3>This week</h3>
+        <p class="stat-num" data-stat="weekMinutes">0<span>min</span></p>
+        <p class="stat-sub">Last 7 days</p>
+      </article>
+      <article class="stat-card glass">
+        <span class="stat-ico" aria-hidden="true">🏋️</span>
+        <h3>Sessions</h3>
+        <p class="stat-num" data-stat="sessions">0<span>total</span></p>
+        <p class="stat-sub">All time</p>
+      </article>
+      <article class="stat-card glass">
+        <span class="stat-ico" aria-hidden="true">⚡</span>
+        <h3>Calories</h3>
+        <p class="stat-num" data-stat="weekKcal">0<span>kcal</span></p>
+        <p class="stat-sub">This week (est.)</p>
+      </article>
+    </div>
+
+    <div class="panel glass">
+      <div class="panel-head">
+        <h3>Last 7 days</h3>
+        <p class="panel-note">Minutes trained per day</p>
+      </div>
+      <div class="bars" data-bars role="img" aria-label="Minutes trained in the last 7 days"></div>
+    </div>
+  </section>
+
+  <section id="log" class="section" aria-labelledby="log-title">
+    <div class="section-head">
+      <h2 id="log-title">Log a <span class="grad">workout</span></h2>
+      <p>Pick a type, set the duration — calories are estimated for you.</p>
+    </div>
+
+    <div class="log-grid">
+      <form class="log-form glass" data-form novalidate>
+        <div class="field">
+          <label for="type">Workout type</label>
+          <select id="type" name="type">
+            <option value="Strength">Strength training</option>
+            <option value="Run">Run</option>
+            <option value="Cycling">Cycling</option>
+            <option value="HIIT">HIIT</option>
+            <option value="Yoga">Yoga</option>
+            <option value="Walk">Walk</option>
+            <option value="Swim">Swim</option>
+          </select>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="minutes">Duration (min)</label>
+            <input id="minutes" name="minutes" type="number" min="1" max="600" value="45" inputmode="numeric" required />
+          </div>
+          <div class="field">
+            <label for="effort">Effort</label>
+            <select id="effort" name="effort">
+              <option value="1">Light</option>
+              <option value="1.25" selected>Moderate</option>
+              <option value="1.5">Hard</option>
+            </select>
+          </div>
+        </div>
+        <p class="estimate">Estimated burn: <b data-estimate>0 kcal</b></p>
+        <button class="btn btn-primary btn-block" type="submit">Add to today</button>
+        <p class="form-msg" data-msg role="status" aria-live="polite"></p>
+      </form>
+
+      <div class="log-list-wrap glass">
+        <div class="panel-head">
+          <h3>Recent sessions</h3>
+          <button class="btn btn-ghost btn-xs" type="button" data-clear>Clear all</button>
+        </div>
+        <ul class="log-list" data-list aria-live="polite"></ul>
+        <p class="empty" data-empty>No sessions yet — log your first movement to light up the dashboard.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="goals" class="section" aria-labelledby="goals-title">
+    <div class="section-head">
+      <h2 id="goals-title">Weekly <span class="grad">goals</span></h2>
+      <p>Small targets, compounding results.</p>
+    </div>
+    <div class="goal-grid">
+      <article class="goal-card glass">
+        <h3>Move 60 min daily</h3>
+        <div class="meter"><span data-goal="today"></span></div>
+        <p class="goal-note"><b data-goal-text="today">0%</b> complete today</p>
+      </article>
+      <article class="goal-card glass">
+        <h3>Train 5 days / week</h3>
+        <div class="meter"><span data-goal="days"></span></div>
+        <p class="goal-note"><b data-goal-text="days">0%</b> of weekly target</p>
+      </article>
+      <article class="goal-card glass">
+        <h3>Reach a 10-day streak</h3>
+        <div class="meter"><span data-goal="streak"></span></div>
+        <p class="goal-note"><b data-goal-text="streak">0%</b> of streak goal</p>
+      </article>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <p class="footer-brand">Vitalsly</p>
+      <p class="footer-note">A premium demo fitness dashboard — data is stored locally in your browser.</p>
+    </div>
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="#dashboard">Dashboard</a>
+      <a href="#log">Log workout</a>
+      <a href="#goals">Goals</a>
+    </nav>
+  </div>
+  <p class="footer-fine">Built with vanilla HTML, CSS &amp; JavaScript. No frameworks, no tracking.</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
